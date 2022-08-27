@@ -1,0 +1,106 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "rules": {
+    "camelcase": "off",
+    "prettier/prettier": "error",
+		"jsx-a11y/anchor-is-valid": [
+			"error",
+			{
+				"components": [
+					"Link"
+				],
+				"specialLink": [
+					"hrefLeft",
+					"hrefRight"
+				],
+				"aspects": [
+					"invalidHref",
+					"preferButton"
+				]
+			}
+		],
+    "react/destructuring-assignment": "off",
+    "react/jsx-props-no-spreading": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"react/require-default-props": "off",
+		"react/jsx-one-expression-per-line": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [
+					".tsx"
+				]
+			}
+		],
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal"],
+				"pathGroups": [
+				{
+					"pattern": "react",
+					"group": "external",
+					"position": "before"
+				}
+				],
+				"pathGroupsExcludedImportTypes": ["react"],
+				"newlines-between": "always",
+				"alphabetize": {
+				"order": "asc",
+				"caseInsensitive": true
+				}
+			}
+		],
+    "@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/camelcase": "off",
+		"@typescript-eslint/no-use-before-define": ["error"],
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+			  "argsIgnorePattern": "^_"
+			}
+		],
+		"space-before-function-paren": "off",
+		"no-use-before-define": "off"
+  },
+  "settings": {
+    "react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"typescript": {}
+		}
+  }
+}
